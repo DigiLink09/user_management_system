@@ -9,11 +9,23 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class AppComponent implements DoCheck {
   title = 'authentication';
   isadmin=false;
+  isdev=false;
+  isda=false;
+  istester=false;
   isMenuVisible=false;
   constructor(private route:Router){
     let role=sessionStorage.getItem('role');
     if(role=='admin'){
       this.isadmin=true;
+    }
+    if(role=='isdev'){
+      this.isdev=true;
+    }
+    if(role=='isda'){
+      this.isda=true;
+    }
+    if(role=='istester'){
+      this.istester=true;
     }
   }
   ngDoCheck(): void {
