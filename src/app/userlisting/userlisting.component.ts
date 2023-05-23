@@ -33,12 +33,15 @@ export class UserlistingComponent implements AfterViewInit {
       this.dataSource.sort = this.sort;
     });
   }
-  displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
+  displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'assign','update','delete'];
 
   updateuser(code: any) {
     this.OpenDialog('1000ms', '600ms', code);
   }
 
+  deleteuser(code: any) {
+    this.deleteUser(code);
+  }
   OpenDialog(enteranimation: any, exitanimation: any, code: string) {
     const popup = this.dialog.open(UpdatepopupComponent, {
       enterAnimationDuration: enteranimation,
@@ -52,5 +55,7 @@ export class UserlistingComponent implements AfterViewInit {
       this.LoadUser();
     });
   }
+  deleteUser(code: string) {
 
+  }
 }
