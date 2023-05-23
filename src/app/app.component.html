@@ -14,14 +14,14 @@
     alt="User Management System"
     src="assets/logo.png"
   />
-  <span>USM</span>
-  <a routerLink="">Home</a>
-  <a *ngIf="isadmin" routerLink="/user">User</a>
-  <a *ngIf="isdev" routerLink="/developer">Developer</a>
-  <a *ngIf="isda" routerLink="/data-analyst">Data Analyst</a>
-  <a  *ngIf="istester" routerLink="/tester">Tester</a>
+  <h1><em>USM</em></h1>
+ 
     <div class="spacer"></div>
-    
+    <a routerLink="">Home</a>
+    <a *ngIf="isadmin" routerLink="/user">User</a>
+    <a *ngIf="isdev" routerLink="/developer">Developer</a>
+    <a *ngIf="isda" routerLink="/data-analyst">Data Analyst</a>
+    <a  *ngIf="istester" routerLink="/tester">Tester</a>
     <a routerLink="/login">Logout</a>
 </div>
 
