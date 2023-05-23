@@ -18,11 +18,8 @@
       "password": "Test@1234",
       "email": "test@in.com",
       "gender": "male",
-      "role": "user",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-      }
+      "role": "tech",
+      "isactive": true
     },
     {
       "id": "Jhon1",
@@ -30,11 +27,8 @@
       "password": "Test@1233",
       "email": "te@in.com",
       "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-      }
+      "role": "user",
+      "isactive": true
     },
     {
       "id": "ntuser",
@@ -47,15 +41,6 @@
       "address": {
         "area": "banglore"
       }
-    },
-    {
-      "id": "Nokuthula123",
-      "name": "Nokuthula",
-      "password": "Thuli@12344",
-      "email": "nokuthula@digilink.africa",
-      "gender": "female",
-      "role": "",
-      "isactive": false
     }
   ],
   "role": [
@@ -106,6 +91,33 @@
       "haveedit": true,
       "haveadd": true,
       "havedelete": false
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "rakhesh",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 2,
+      "name": "rahul",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 3,
+      "name": "ramesh",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 4,
+      "name": "rahim",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 5,
+      "name": "robert",
+      "Creditlimit": 1000
     }
   ]
 }

@@ -12,7 +12,7 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
   templateUrl: './userlisting.component.html',
   styleUrls: ['./userlisting.component.css']
 })
-export class UserComponent implements AfterViewInit {
+export class UserlistingComponent implements AfterViewInit {
 
   constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog) {
     this.LoadUser();
