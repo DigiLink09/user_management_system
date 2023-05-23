@@ -56,6 +56,8 @@ export class UserlistingComponent implements AfterViewInit {
     });
   }
   deleteUser(code: string) {
-
+    data: {
+      usercode: code
+    }
   }
 }
