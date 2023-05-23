@@ -59,8 +59,16 @@
       "name": "User"
     },
     {
-      "code": "customer",
-      "name": "Customer"
+      "code": "dev",
+      "name": "Developer"
+    },
+    {
+      "code": "da",
+      "name": "Data Analyst"
+    },
+    {
+      "code": "tester",
+      "name": "Software Tester"
     }
   ],
   "roleaccess": [

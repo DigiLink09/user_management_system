@@ -14,6 +14,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { CustomerComponent } from './customer/customer.component';
+import { DeveloperComponent } from './developer/developer.component';
+import { DataAnalystComponent } from './data-analyst/data-analyst.component';
+import { TesterComponent } from './tester/tester.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CustomerComponent } from './customer/customer.component';
     HomeComponent,
     UpdatepopupComponent,
     CustomerComponent,
-    UserlistingComponent
+    UserlistingComponent,
+    DeveloperComponent,
+    DataAnalystComponent,
+    TesterComponent
   ],
   imports: [
     BrowserModule,

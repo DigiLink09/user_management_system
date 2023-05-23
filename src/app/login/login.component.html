@@ -29,11 +29,11 @@
     <form class="ui form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
       <div class="field">
         <label>Username</label>
-        <input type="text" name="username" placeholder="Username">
+        <input type="text" name="username" placeholder="Username" formControlName="id">
       </div>
       <div class="field">
         <label>Password</label>
-        <input type="text" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Password" formControlName="password">
       </div>
       <div>
         <button mat-raised-button color="primary">Login</button>
