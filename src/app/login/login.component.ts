@@ -25,6 +25,7 @@ export class LoginComponent {
   proceedlogin() {
     if (this.loginform.valid) {
       this.service.GetUserbyCode(this.loginform.value.id).subscribe(item => {
+        console.log('inside-login: ', item)
         this.result = item;
         if (this.result.password === this.loginform.value.password){
           if (this.result.isactive) {

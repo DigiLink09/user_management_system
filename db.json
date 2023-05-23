@@ -18,7 +18,7 @@
       "password": "Test@1234",
       "email": "test@in.com",
       "gender": "male",
-      "role": "tech",
+      "role": "admin",
       "isactive": true
     },
     {
@@ -41,6 +41,15 @@
       "address": {
         "area": "banglore"
       }
+    },
+    {
+      "id": "Tukutuku",
+      "name": "Thuthukani",
+      "password": "Thuthukani@1993",
+      "email": "thuthukani@gmail.com",
+      "gender": "male",
+      "role": "dev",
+      "isactive": true
     }
   ],
   "role": [
@@ -53,33 +62,14 @@
       "name": "Technician"
     },
     {
-      "code": "dev",
-      "name": "Developer"
-    },
-    {
-      "code": "da",
-      "name": "Data Analyst"
-    }, {
-      "code": "tester",
-      "name": "Software Tester"
+      "code": "admin",
+      "name": "Admin"
     }
   ],
   "menu": [
     {
       "code": "user",
       "name": "User"
-    },
-    {
-      "code": "dev",
-      "name": "Developer"
-    },
-    {
-      "code": "da",
-      "name": "Data Analyst"
-    },
-    {
-      "code": "tester",
-      "name": "Software Tester"
     }
   ],
   "roleaccess": [

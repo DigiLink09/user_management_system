@@ -18,13 +18,13 @@ export class AppComponent implements DoCheck {
     if(role=='admin'){
       this.isadmin=true;
     }
-    if(role=='isdev'){
+    if(role=='dev'){
       this.isdev=true;
     }
-    if(role=='isda'){
+    if(role=='da'){
       this.isda=true;
     }
-    if(role=='istester'){
+    if(role=='tester'){
       this.istester=true;
     }
   }
