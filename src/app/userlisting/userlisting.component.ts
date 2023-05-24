@@ -40,7 +40,7 @@ export class UserlistingComponent implements AfterViewInit {
   }
 
   deleteuser(code: any) {
-    this.deleteUser(code);
+    this.DeleteUser(code);
   }
   OpenDialog(enteranimation: any, exitanimation: any, code: string) {
     const popup = this.dialog.open(UpdatepopupComponent, {
@@ -55,7 +55,7 @@ export class UserlistingComponent implements AfterViewInit {
       this.LoadUser();
     });
   }
-  deleteUser(code: string) {
+  DeleteUser(code: string) {
     data: {
       usercode: code
     }
