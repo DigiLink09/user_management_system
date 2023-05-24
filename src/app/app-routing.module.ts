@@ -18,7 +18,7 @@ const routes: Routes = [
 {component:CustomerComponent,path:'customer',canActivate:[AuthGuard]},
 {component:DeveloperComponent,path:'developer',canActivate:[AuthGuard]},
 {component:DataAnalystComponent,path:'data_analyst',canActivate:[AuthGuard]},
-{component:TesterComponent,path:'tester',canActivate:[AuthGuard]},
+{component:TesterComponent,path:'tester',canActivate:[AuthGuard]}
 ];
 
 @NgModule({
