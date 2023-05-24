@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserlistingComponent implements AfterViewInit {
 
-  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog,private toastr: ToastrService, private router: Router) {
+  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog, private toastr: ToastrService, private router: Router) {
     this.SetAccessPermission();
   }
   userlist: any;
@@ -30,9 +30,11 @@ export class UserlistingComponent implements AfterViewInit {
   haveadd = false;
   havedelete = false;
 
+
   ngAfterViewInit(): void {
 
   }
+
 
   LoadUser() {
     this.service.Getall().subscribe(res => {
@@ -43,45 +45,54 @@ export class UserlistingComponent implements AfterViewInit {
     });
   }
 
-  SetAccessPermission(){
-    this.service.Getaccessbyrole(this.service.getrole(),'user').subscribe(res=>{
-      this.accessdata = res;
-      //console.log(this.accessdata);
 
-      if(this.accessdata.length>0)
-      {
+  SetAccessPermission() {
+    this.service.Getaccessbyrole(this.service.getrole(), 'user').subscribe(res => {
+      this.accessdata = res;
+
+      if (this.accessdata.length > 0) {
         this.haveadd = this.accessdata[0].haveadd;
         this.haveedit = this.accessdata[0].haveedit;
         this.havedelete = this.accessdata[0].havedelete;
         this.LoadUser();
       }
-      else{
+      else {
         alert('You are not authorized to access');
         this.router.navigate([''])
       }
     })
   }
 
+
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
+
   updateuser(code: any) {
-    if(this.haveedit)
-    {
+    if (this.haveedit) {
       this.OpenDialog('1000ms', '600ms', code);
-    }else{
+    } else {
       this.toastr.warning("You don't have access for Edit");
     }
   }
 
-  deleteuser(code: any) {
-    if(this.haveedit)
-    {
+
+  edituser(code: any) {
+    if (this.haveedit) {
       this.toastr.success("Success");
-    }else{
+    } else {
       this.toastr.warning("You don't have access for Edit");
     }
-    //this.DeleteUser(code);
   }
+
+
+  deleteuser(code: any) {
+    if (this.haveedit) {
+      this.toastr.success("Success");
+    } else {
+      this.toastr.warning("You don't have access for Edit");
+    }
+  }
+
 
   OpenDialog(enteranimation: any, exitanimation: any, code: string) {
     const popup = this.dialog.open(UpdatepopupComponent, {
@@ -97,11 +108,27 @@ export class UserlistingComponent implements AfterViewInit {
     });
   }
 
+
+  OpenEditDialog(enteranimation: any, exitanimation: any, code: string) {
+    const popup = this.dialog.open(UpdatepopupComponent, {
+      enterAnimationDuration: enteranimation,
+      exitAnimationDuration: exitanimation,
+      width: '30%',
+      data: {
+        usercode: code
+      }
+    });
+    popup.afterClosed().subscribe(res => {
+      this.LoadUser();
+    });
+  }
+
+
   DeleteUser(code: string) {
     data: {
       usercode: code
     }
   }
 
-  ////
+
 }
