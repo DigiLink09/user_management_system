@@ -17,7 +17,7 @@ const routes: Routes = [
  {component:UserlistingComponent,path:'user',canActivate:[AuthGuard]},
 {component:CustomerComponent,path:'customer',canActivate:[AuthGuard]},
 {component:DeveloperComponent,path:'developer',canActivate:[AuthGuard]},
-{component:DataAnalystComponent,path:'data_analyst',canActivate:[AuthGuard]},
+{component:DataAnalystComponent,path:'data-analyst',canActivate:[AuthGuard]},
 {component:TesterComponent,path:'tester',canActivate:[AuthGuard]}
 ];
 
