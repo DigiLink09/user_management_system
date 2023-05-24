@@ -85,4 +85,10 @@ export class CustomerComponent {
       this.toastr.warning("You don't have access for Create");
     }
   }
+
+  DeleteUser(code: string) {
+    data: {
+      usercode: code
+    }
+  }
 }

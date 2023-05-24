@@ -5,7 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { AuthService } from '../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
+import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
+import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
   selector: 'app-user',
@@ -33,7 +34,7 @@ export class UserlistingComponent implements AfterViewInit {
       this.dataSource.sort = this.sort;
     });
   }
-  displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'assign','update','delete'];
+  displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
   updateuser(code: any) {
     this.OpenDialog('1000ms', '600ms', code);
