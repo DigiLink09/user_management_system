@@ -56,7 +56,9 @@ export class CustomerComponent {
     })
   }
 
+
   displayedColumns: string[] = ['code', 'name', 'creditlimit','action'];
+
 
   updatecustomer(code:any){
 
@@ -67,15 +69,20 @@ export class CustomerComponent {
       this.toastr.warning("You don't have access for Edit");
     }
   }
+
+
   removecustomer(code:any){
     
     if(this.havedelete)
     {
+      this.DeleteCustomer(code);
       this.toastr.success("Success");
     }else{
       this.toastr.warning("You don't have access for Delete");
     }
   }
+
+
   addcustomer(){
     
     if(this.haveadd)
@@ -86,9 +93,12 @@ export class CustomerComponent {
     }
   }
 
-  DeleteUser(code: string) {
-    data: {
-      usercode: code
-    }
+
+  DeleteCustomer(code: string) {
+    this.service.deletecustomer(code).subscribe(res => {
+      console.log(code);
+      this.toastr.success("Customer deleted successfully!");
+      this.LoadCustomer();
+    });
   }
 }

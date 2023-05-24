@@ -9,7 +9,9 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
+
   apiurl='http://localhost:3000/user';
+  custapiurl='http://localhost:3000/customer';
 
   RegisterUser(inputdata:any){
     return this.http.post(this.apiurl,inputdata)
@@ -40,5 +42,8 @@ export class AuthService {
   }
   deleteuser(id:any){
     return this.http.delete(this.apiurl+'/'+id);
+  }
+  deletecustomer(id:any){
+    return this.http.delete(this.custapiurl+'/'+id);
   }
 }

@@ -86,7 +86,7 @@ export class UserlistingComponent implements AfterViewInit {
 
 
   deleteuser(code: any) {
-    if (this.haveedit) {
+    if (this.havedelete) {
       this.DeleteUser(code);
     } else {
       this.toastr.warning("You don't have access for Edit");

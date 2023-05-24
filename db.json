@@ -29,18 +29,6 @@
       "gender": "male",
       "role": "user",
       "isactive": true
-    },
-    {
-      "id": "ntuser",
-      "name": "ramesh",
-      "password": "Test@1234",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address": {
-        "area": "banglore"
-      }
     }
   ],
   "role": [
@@ -111,16 +99,6 @@
     {
       "id": 3,
       "name": "ramesh",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 4,
-      "name": "rahim",
-      "Creditlimit": 1000
-    },
-    {
-      "id": 5,
-      "name": "robert",
       "Creditlimit": 1000
     }
   ]
