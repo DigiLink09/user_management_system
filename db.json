@@ -41,15 +41,6 @@
       "address": {
         "area": "banglore"
       }
-    },
-    {
-      "id": "Tukutuku",
-      "name": "Thuthukani",
-      "password": "Thuthukani@1993",
-      "email": "thuthukani@gmail.com",
-      "gender": "male",
-      "role": "dev",
-      "isactive": true
     }
   ],
   "role": [

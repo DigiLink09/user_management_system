@@ -6,7 +6,6 @@ import { MatSort } from '@angular/material/sort';
 import { AuthService } from '../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
-import { DeleteComponent } from '../delete/delete.component';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -17,7 +16,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserlistingComponent implements AfterViewInit {
 
-  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog, private toastr: ToastrService, private router: Router) {
+  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog, 
+    private toastr: ToastrService, private router: Router) {
     this.SetAccessPermission();
   }
   userlist: any;
@@ -87,7 +87,7 @@ export class UserlistingComponent implements AfterViewInit {
 
   deleteuser(code: any) {
     if (this.haveedit) {
-      this.toastr.success("Success");
+      this.DeleteUser(code);
     } else {
       this.toastr.warning("You don't have access for Edit");
     }
@@ -124,11 +124,12 @@ export class UserlistingComponent implements AfterViewInit {
   }
 
 
-  DeleteUser(code: string) {
-    data: {
-      usercode: code
-    }
+  DeleteUser(code:any){
+    this.service.deleteuser(code).subscribe(res => {
+      console.log(code);
+      this.toastr.success("User deleted successfully!");
+      this.LoadUser();
+    });
+    
   }
-
-
 }
