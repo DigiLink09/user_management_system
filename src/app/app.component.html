@@ -18,11 +18,11 @@
  
     <div class="spacer"></div>
     <a routerLink="">Home</a>
-    <a *ngIf="isadmin" routerLink="/user">User</a>
+    <a routerLink="/user">User</a>
     <a routerLink="/customer">Customer</a>
-    <a routerLink="/developer">Developer</a>
-    <a routerLink="/data-analyst">Data Analyst</a>
-    <a routerLink="/tester">Tester</a>
+    <a *ngIf="isadmin" routerLink="/developer">Developer</a>
+    <a *ngIf="isadmin" routerLink="/data-analyst">Data Analyst</a>
+    <a *ngIf="isadmin" routerLink="/tester">Tester</a>
     <a routerLink="/login">Logout</a>
 </div>
 

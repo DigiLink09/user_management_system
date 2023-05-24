@@ -7,6 +7,8 @@ import { AuthService } from '../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 import { DeleteComponent } from '../delete/delete.component';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user',
@@ -15,17 +17,23 @@ import { DeleteComponent } from '../delete/delete.component';
 })
 export class UserlistingComponent implements AfterViewInit {
 
-  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog) {
-    this.LoadUser();
+  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog,private toastr: ToastrService, private router: Router) {
+    this.SetAccessPermission();
   }
   userlist: any;
   dataSource: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  accessdata: any;
+  haveedit = false;
+  haveadd = false;
+  havedelete = false;
+
   ngAfterViewInit(): void {
 
   }
+
   LoadUser() {
     this.service.Getall().subscribe(res => {
       this.userlist = res;
@@ -34,15 +42,47 @@ export class UserlistingComponent implements AfterViewInit {
       this.dataSource.sort = this.sort;
     });
   }
+
+  SetAccessPermission(){
+    this.service.Getaccessbyrole(this.service.getrole(),'user').subscribe(res=>{
+      this.accessdata = res;
+      //console.log(this.accessdata);
+
+      if(this.accessdata.length>0)
+      {
+        this.haveadd = this.accessdata[0].haveadd;
+        this.haveedit = this.accessdata[0].haveedit;
+        this.havedelete = this.accessdata[0].havedelete;
+        this.LoadUser();
+      }
+      else{
+        alert('You are not authorized to access');
+        this.router.navigate([''])
+      }
+    })
+  }
+
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
   updateuser(code: any) {
-    this.OpenDialog('1000ms', '600ms', code);
+    if(this.haveedit)
+    {
+      this.OpenDialog('1000ms', '600ms', code);
+    }else{
+      this.toastr.warning("You don't have access for Edit");
+    }
   }
 
   deleteuser(code: any) {
-    this.DeleteUser(code);
+    if(this.haveedit)
+    {
+      this.toastr.success("Success");
+    }else{
+      this.toastr.warning("You don't have access for Edit");
+    }
+    //this.DeleteUser(code);
   }
+
   OpenDialog(enteranimation: any, exitanimation: any, code: string) {
     const popup = this.dialog.open(UpdatepopupComponent, {
       enterAnimationDuration: enteranimation,
@@ -56,9 +96,12 @@ export class UserlistingComponent implements AfterViewInit {
       this.LoadUser();
     });
   }
+
   DeleteUser(code: string) {
     data: {
       usercode: code
     }
   }
+
+  ////
 }
