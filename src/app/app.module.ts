@@ -17,7 +17,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { DataAnalystComponent } from './data-analyst/data-analyst.component';
 import { TesterComponent } from './tester/tester.component';
-import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { DeleteComponent } from './delete/delete.component';
     DeveloperComponent,
     DataAnalystComponent,
     TesterComponent,
-    DeleteComponent
+    EditComponent
   ],
   imports: [
     BrowserModule,
