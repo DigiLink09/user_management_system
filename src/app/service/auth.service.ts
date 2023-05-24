@@ -46,4 +46,7 @@ export class AuthService {
   deletecustomer(id:any){
     return this.http.delete(this.custapiurl+'/'+id);
   }
+  edituser(id:any,inputdata:any){
+    return this.http.put(this.apiurl+'/'+id,inputdata);
+  }
 }

@@ -51,9 +51,9 @@ export class EditComponent implements OnInit{
     });
   }
 
-  
-  UpdateUser() {
-    this.service.updateuser(this.registerform.value.id, this.registerform.value).subscribe(res => {
+
+  editUser() {
+    this.service.edituser(this.registerform.value.id, this.registerform.value).subscribe(res => {
       this.toastr.success('Updated successfully.');
       this.dialogref.close();
     });

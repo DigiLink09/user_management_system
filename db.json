@@ -29,6 +29,15 @@
       "gender": "male",
       "role": "user",
       "isactive": true
+    },
+    {
+      "id": "Thulibathy",
+      "name": "Nokuthula",
+      "password": "Thuli@1992",
+      "email": "nokuthulamargaret@gmail.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
     }
   ],
   "role": [

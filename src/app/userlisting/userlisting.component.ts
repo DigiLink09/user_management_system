@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-user',
@@ -78,7 +79,8 @@ export class UserlistingComponent implements AfterViewInit {
 
   edituser(code: any) {
     if (this.haveedit) {
-      this.toastr.success("Success");
+      this.OpenEditDialog('1000ms', '600ms', code);
+      //this.toastr.success("Success");
     } else {
       this.toastr.warning("You don't have access for Edit");
     }
@@ -110,7 +112,7 @@ export class UserlistingComponent implements AfterViewInit {
 
 
   OpenEditDialog(enteranimation: any, exitanimation: any, code: string) {
-    const popup = this.dialog.open(UpdatepopupComponent, {
+    const popup = this.dialog.open(EditComponent, {
       enterAnimationDuration: enteranimation,
       exitAnimationDuration: exitanimation,
       width: '30%',
