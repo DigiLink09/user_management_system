@@ -23,6 +23,7 @@ export class UserlistingComponent implements AfterViewInit {
   }
   userlist: any;
   dataSource: any;
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 

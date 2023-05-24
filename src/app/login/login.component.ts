@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
 import { AuthService } from '../service/auth.service';
+import { UserlistingComponent } from '../userlisting/userlisting.component';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,9 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private builder: FormBuilder, private toastr: ToastrService, private service: AuthService,
-    private router: Router) {
-      sessionStorage.clear();
-
+  constructor(private builder: FormBuilder, private toastr: ToastrService,
+    private service: AuthService, private router: Router) {
+      // sessionStorage.clear();
   }
   result: any;
 

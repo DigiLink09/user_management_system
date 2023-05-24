@@ -38,6 +38,15 @@
       "gender": "male",
       "role": "user",
       "isactive": true
+    },
+    {
+      "id": "Lebzaza",
+      "name": "Lebogang",
+      "password": "Lebo@12345",
+      "email": "lebo@gmail.com",
+      "gender": "male",
+      "role": "tech",
+      "isactive": true
     }
   ],
   "role": [
