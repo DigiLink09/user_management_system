@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'
 import { AuthService } from '../service/auth.service';
-import { UserlistingComponent } from '../userlisting/userlisting.component';
+import { User } from '../User.component';
 
 @Component({
   selector: 'app-login',
@@ -15,21 +15,44 @@ export class LoginComponent {
     private service: AuthService, private router: Router) {
       // sessionStorage.clear();
   }
-  result: any;
+  userinfo: User = new User();
 
   loginform = this.builder.group({
     id: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required)
   });
 
-  proceedlogin() {
+  continueToLogin() {
     if (this.loginform.valid) {
-      this.service.GetUserbyCode(this.loginform.value.id).subscribe(item => {
-        this.result = item;
-        if (this.result.password === this.loginform.value.password){
-          if (this.result.isactive) {
-            sessionStorage.setItem('username',this.result.id);
-            sessionStorage.setItem('role',this.result.role);
+      /**
+       * Get the response from the json server
+       */
+      this.service.GetUserbyCode(this.loginform.value.id || '').subscribe(loginData => {
+
+        /**
+         * 
+         */
+        this.userinfo = loginData;
+
+        /**
+         * This if checks if the password entered is matches the one on the database
+         */
+        if (this.userinfo.password === this.loginform.value.password){
+
+          /**
+           * Checks if user is active
+           */
+          if (this.userinfo.isactive) {
+
+            /**
+             * Storing the user login session
+             */
+            sessionStorage.setItem('username',this.userinfo.id);
+            sessionStorage.setItem('role',this.userinfo.role);
+
+            /**
+             * Takes you to the landing page after logging in.
+             */
             this.router.navigate(['']);
           } else {
             this.toastr.error('Please contact Admin', 'InActive User');

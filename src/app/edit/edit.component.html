@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Update User</h1>
 
 
-<form class="example-form" [formGroup]="registerform" (ngSubmit)="editUser()">
+<form class="example-form" [formGroup]="editform" (ngSubmit)="editUser('id')">
     <mat-form-field class="example-full-width">
       <mat-label>Username</mat-label>
       <input matInput formControlName="id" >

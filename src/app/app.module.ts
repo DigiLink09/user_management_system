@@ -19,6 +19,7 @@ import { DataAnalystComponent } from './data-analyst/data-analyst.component';
 import { TesterComponent } from './tester/tester.component';
 import { EditComponent } from './edit/edit.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatMenuModule } from '@angular/material/menu';
     DeveloperComponent,
     DataAnalystComponent,
     TesterComponent,
-    EditComponent
+    EditComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class EditComponent implements OnInit{
     private dialogref: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
 
     this.service.getuserrole().subscribe(res => {
-      this.rolelist = res;
+    this.rolelist = res;
     });
   }
 
@@ -28,7 +28,7 @@ export class EditComponent implements OnInit{
   rolelist: any;
   editdata: any;
 
-  registerform = this.builder.group({
+  editform = this.builder.group({
     id: this.builder.control(''),
     name: this.builder.control(''),
     password: this.builder.control(''),
@@ -43,7 +43,7 @@ export class EditComponent implements OnInit{
     this.service.GetUserbyCode(code).subscribe(res => {
       this.editdata = res;
       console.log(this.editdata);
-      this.registerform.setValue({
+      this.editform.setValue({
         id: this.editdata.id, name: this.editdata.name,
         password: this.editdata.password, email: this.editdata.email, gender: this.editdata.gender,
         role: this.editdata.role, isactive: this.editdata.isactive
@@ -52,8 +52,8 @@ export class EditComponent implements OnInit{
   }
 
 
-  editUser() {
-    this.service.edituser(this.registerform.value.id, this.registerform.value).subscribe(res => {
+  editUser(code:any) {
+    this.service.edituser(this.editform.value.id, this.editform.value).subscribe(res => {
       this.toastr.success('Updated successfully.');
       this.dialogref.close();
     });

@@ -27,6 +27,8 @@ export class RegisterComponent {
     role: this.builder.control(''),
     isactive: this.builder.control(false)
   });
+
+  
   proceedregister() {
     if (this.registerform.valid) {
       this.service.RegisterUser(this.registerform.value).subscribe(result => {
@@ -37,5 +39,5 @@ export class RegisterComponent {
       this.toastr.warning('Please enter valid data.')
     }
   }
-
+// 
 }

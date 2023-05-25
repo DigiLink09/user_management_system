@@ -70,19 +70,6 @@ export class CustomerComponent {
     }
   }
 
-
-  removecustomer(code:any){
-    
-    if(this.havedelete)
-    {
-      this.DeleteCustomer(code);
-      this.toastr.success("Success");
-    }else{
-      this.toastr.warning("You don't have access for Delete");
-    }
-  }
-
-
   addcustomer(){
     
     if(this.haveadd)
@@ -92,14 +79,4 @@ export class CustomerComponent {
       this.toastr.warning("You don't have access for Create");
     }
   }
-
-
-  DeleteCustomer(code: string) {
-    this.service.deletecustomer(code).subscribe(res => {
-      console.log(code);
-      this.toastr.success("Customer deleted successfully!");
-      this.LoadCustomer();
-    });
-  }
 }
-//////

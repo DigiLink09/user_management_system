@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../User.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,20 @@ export class AuthService {
   constructor(private http:HttpClient) { 
 
   }
-
   apiurl='http://localhost:3000/user';
-  custapiurl='http://localhost:3000/customer';
   daapiurl='http://localhost:3000/da';
 
-  RegisterUser(inputdata:any){
-    return this.http.post(this.apiurl,inputdata)
+  RegisterUser(userdata:any){
+    return this.http.post(this.apiurl,userdata)
   }
-  GetUserbyCode(id:any){
-    return this.http.get(this.apiurl+'/'+id);
+  GetUserbyCode(id:string){
+    return this.http.get<User>(this.apiurl+'/'+id);
   }
   Getall(){
     return this.http.get(this.apiurl);
   }
-  updateuser(id:any,inputdata:any){
-    return this.http.put(this.apiurl+'/'+id,inputdata);
+  updateuser(id:any,userdata:any){
+    return this.http.put(this.apiurl+'/'+id,userdata);
   }
   getuserrole(){
     return this.http.get('http://localhost:3000/role');
@@ -44,11 +43,8 @@ export class AuthService {
   deleteuser(id:any){
     return this.http.delete(this.apiurl+'/'+id);
   }
-  deletecustomer(id:any){
-    return this.http.delete(this.custapiurl+'/'+id);
-  }
-  edituser(id:any,inputdata:any){
-    return this.http.put(this.apiurl+'/'+id,inputdata);
+  edituser(id:any,userdata:any){
+    return this.http.put(this.apiurl+'/'+id,userdata);
   }
   GetAllAnalysts(){
     return this.http.get(this.daapiurl);
