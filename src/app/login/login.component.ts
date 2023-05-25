@@ -13,7 +13,6 @@ import { User } from '../User.component';
 export class LoginComponent {
   constructor(private builder: FormBuilder, private toastr: ToastrService,
     private service: AuthService, private router: Router) {
-      // sessionStorage.clear();
   }
   userinfo: User = new User();
 
@@ -24,6 +23,7 @@ export class LoginComponent {
 
   continueToLogin() {
     if (this.loginform.valid) {
+
       /**
        * Get the response from the json server
        */

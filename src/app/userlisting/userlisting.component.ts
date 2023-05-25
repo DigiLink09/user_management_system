@@ -66,7 +66,7 @@ export class UserlistingComponent implements AfterViewInit {
   }
 
 
-  displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
+  displayedColumns: string[] = ['username', 'name','surname', 'email', 'phone','status', 'role', 'action'];
 
 
   updateuser(code: any) {

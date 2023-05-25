@@ -282,9 +282,9 @@
   }
 
   .mat-card-menu {
-    background-color:aqua;
+    background-color:rgb(249, 249, 252);
     margin-top: 6rem;
-    margin-left: 3rem;
+    margin-left: 50px;
   }
 
   /* Responsive Styles */

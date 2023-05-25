@@ -14,9 +14,9 @@
     },
     {
       "id": "testuser",
-      "name": "Test User",
+      "name": "Thuli",
       "password": "Test@1234",
-      "email": "test@in.com",
+      "email": "lebo@gmail.com",
       "gender": "male",
       "role": "user",
       "isactive": true
@@ -40,12 +40,12 @@
       "isactive": true
     },
     {
-      "id": "Tukutuku",
-      "name": "Thuthukani",
-      "password": "Tukzen12345@",
-      "email": "thuthukani@gmail.com",
-      "gender": "male",
-      "role": "dev",
+      "id": "Lericia123",
+      "name": "Lericia",
+      "password": "Leri@12345",
+      "email": "lericia@gmail",
+      "gender": "female",
+      "role": "user",
       "isactive": true
     }
   ],
