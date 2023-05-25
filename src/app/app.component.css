@@ -262,6 +262,31 @@
     width: 1920px;
   }
 
+  #outer-container {
+    display: table;
+    /* width: 100%;
+    height: 100%; */
+  }
+  
+  #sidebar {
+    display: table-cell;
+    width: 20%;
+    vertical-align: top;
+  }
+  
+  #content {
+    display: table-cell;
+    width: 80%;
+    vertical-align: top;
+    margin-bottom: 50px;
+  }
+
+  .mat-card-menu {
+    background-color:aqua;
+    margin-top: 6rem;
+    margin-left: 3rem;
+  }
+
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
     .card-container > *:not(.circle-link) ,

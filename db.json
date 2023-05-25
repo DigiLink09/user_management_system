@@ -31,21 +31,21 @@
       "isactive": true
     },
     {
-      "id": "Thulibathy",
-      "name": "Nokuthula",
-      "password": "Thuli@1992",
-      "email": "nokuthulamargaret@gmail.com",
+      "id": "Lebzaza",
+      "name": "Lebo",
+      "password": "Lebo@12345",
+      "email": "lebo@gmail.com",
       "gender": "male",
       "role": "user",
       "isactive": true
     },
     {
-      "id": "Lebzaza",
-      "name": "Lebogang",
-      "password": "Lebo@12345",
-      "email": "lebo@gmail.com",
+      "id": "Sabza",
+      "name": "Sabelo ",
+      "password": "Sabelo@2000",
+      "email": "sabelo@gmail.com",
       "gender": "male",
-      "role": "tech",
+      "role": "da",
       "isactive": true
     }
   ],
@@ -53,6 +53,18 @@
     {
       "code": "user",
       "name": "User"
+    },
+    {
+      "code": "dev",
+      "name": "Developer"
+    },
+    {
+      "code": "tester",
+      "name": "Tester"
+    },
+    {
+      "code": "da",
+      "name": "Data Analyst"
     },
     {
       "code": "tech",
@@ -71,6 +83,20 @@
     {
       "code": "customer",
       "name": "Customer"
+    },
+    {
+      "code": "da",
+      "name": "Data Analyst"
+    }
+  ],
+  "sideitem": [
+    {
+      "code": "da",
+      "name": "Data Analyst"
+    }, 
+    {
+      "code": "da",
+      "name": "Data Analyst"
     }
   ],
   "roleaccess": [
@@ -84,6 +110,13 @@
     {
       "role": "admin",
       "menu": "customer",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "da",
       "haveedit": true,
       "haveadd": true,
       "havedelete": true

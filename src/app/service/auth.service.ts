@@ -12,6 +12,7 @@ export class AuthService {
 
   apiurl='http://localhost:3000/user';
   custapiurl='http://localhost:3000/customer';
+  daapiurl='http://localhost:3000/da';
 
   RegisterUser(inputdata:any){
     return this.http.post(this.apiurl,inputdata)
@@ -49,4 +50,10 @@ export class AuthService {
   edituser(id:any,inputdata:any){
     return this.http.put(this.apiurl+'/'+id,inputdata);
   }
+  GetAllAnalysts(){
+    return this.http.get(this.daapiurl);
+  }
+  // deleteanalyst(id:any){
+  //   return this.http.delete(this.custapiurl+'/'+id);
+  // }
 }

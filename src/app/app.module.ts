@@ -18,6 +18,7 @@ import { DeveloperComponent } from './developer/developer.component';
 import { DataAnalystComponent } from './data-analyst/data-analyst.component';
 import { TesterComponent } from './tester/tester.component';
 import { EditComponent } from './edit/edit.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EditComponent } from './edit/edit.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
+    MatMenuModule,
     HttpClientModule,
     ToastrModule.forRoot()
   ],

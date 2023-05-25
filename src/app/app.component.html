@@ -18,16 +18,47 @@
  
     <div class="spacer"></div>
     <a routerLink="">Home</a>
-    <a routerLink="/user">User</a>
-    <a routerLink="/customer">Customer</a>
-    <a *ngIf="isadmin" routerLink="/developer">Developer</a>
-    <a *ngIf="isadmin" routerLink="/data-analyst">Data Analyst</a>
-    <a *ngIf="isadmin" routerLink="/tester">Tester</a>
+    <a routerLink="/user">Employees</a>
+    <!-- <a routerLink="/customer">Customer</a> -->
+    <!-- <a *ngIf="isadmin" routerLink="/developer">Developer</a> -->
+    <!-- <a *ngIf="isadmin" routerLink="/data-analyst">Contact Us</a> -->
+    <!-- <a *ngIf="isadmin" routerLink="/tester">About</a> -->
     <a routerLink="/login">Logout</a>
 </div>
 
-<div class="content" style="width: 100%;display: block;" role="main">
-  <router-outlet></router-outlet>
+<div role="main">
+
+  <div id="outer-container">
+  <mat-card *ngIf="isMenuVisible" class="mat-card-menu">
+    <button mat-button [matMenuTriggerFor]="menu">JOB TITLES</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>User</button>
+                <button mat-menu-item>Developers</button>
+                <button mat-menu-item>Data Analysts</button>
+                <button mat-menu-item>Software Testers</button>
+            </mat-menu>
+  </mat-card>
+    <!-- <div id="sidebar">
+        <div class="sideBarMenu">
+            <button mat-button [matMenuTriggerFor]="menu">JOB TITLES</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>User</button>
+                <button mat-menu-item>Developers</button>
+                <button mat-menu-item>Data Analysts</button>
+                <button mat-menu-item>Software Testers</button>
+            </mat-menu>
+        </div>
+    </div> -->
+    <div id="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-3"></div>
+    <div class="col-9">
+     <router-outlet></router-outlet>
+    </div>
+  </div> -->
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
